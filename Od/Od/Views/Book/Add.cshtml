@@ -1,0 +1,19 @@
+﻿@model Od.Models.Book
+
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+@using (Html.BeginForm("Add", "Book"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title)
+        @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Author)
+        @Html.TextBoxFor(m => m.Author)
+        @Html.ValidationMessageFor(m => m.Author, "", new { @class = "text-danger"})
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary">Save</button>
+}

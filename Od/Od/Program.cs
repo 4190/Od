@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Od.Data;
+using Od.Data.EfCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,8 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<EfCoreBookRepository>();
 
 var app = builder.Build();
 
