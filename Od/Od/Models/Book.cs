@@ -1,11 +1,11 @@
-﻿using Microsoft.Identity.Client;
+using Od.Data;
 
 namespace Od.Models
 {
-    public class Book
+    public class Book : IEntity
     {
-        public int IdNumber { get; set; }
-        public string BookTitle { get; set; }
-        public string BookAuthor { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Author { get; set; }
     }
 }
